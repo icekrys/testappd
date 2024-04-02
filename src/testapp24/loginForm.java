@@ -48,6 +48,7 @@ public class loginForm extends javax.swing.JFrame {
         pass = new javax.swing.JTextField();
         user = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,13 +57,15 @@ public class loginForm extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setLayout(null);
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Username/Email:");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(62, 27, 34, 14);
+        jLabel1.setBounds(10, 20, 100, 20);
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Password:");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(62, 59, 34, 14);
+        jLabel2.setBounds(46, 59, 80, 14);
         jPanel2.add(pass);
         pass.setBounds(120, 60, 180, 20);
         jPanel2.add(user);
@@ -75,7 +78,17 @@ public class loginForm extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(310, 60, 55, 23);
+        jButton1.setBounds(310, 60, 55, 20);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("New? Click Here to Register");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(120, 90, 180, 14);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 79, 430, 120);
@@ -88,7 +101,7 @@ public class loginForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
         );
 
         pack();
@@ -105,6 +118,12 @@ public class loginForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Login Failed!");
        }   
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        registrationForm up = new registrationForm();
+        up.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -145,6 +164,7 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField pass;
